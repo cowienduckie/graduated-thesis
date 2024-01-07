@@ -5,20 +5,20 @@
 \label{section:4.1}
 \subsection{Lựa chọn kiến trúc phần mềm}
 \label{subsection:4.1.1}
-Microservices là một kiến trúc phần mềm mà trong đó một ứng dụng được xây dựng thành nhiều dịch vụ nhỏ, chúng được mô hình hoá xoay quanh những nhóm nghệp vụ cụ thể.
+Microservices là một kiến trúc phần mềm mà trong đó một ứng dụng được xây dựng thành nhiều dịch vụ nhỏ, chúng được mô hình hoá xoay quanh những nhóm nghiệp vụ cụ thể.
 Kiến trúc này là một kiểu của kiến trúc hướng dịch vụ (Service-Oriented Architecture - SOA), các dịch vụ nhỏ được thiết kế để chạy trên các luồng độc lập, song song
-với nhau, chúng kết hợp với nhau để thực thi một luồng nghiệp vụ, giao tiếp qua lại thông qua một mạng kết nối riêng.
+với nhau, chúng kết hợp với nhau để thực thi một luồng nghiệp vụ, giao tiếp qua lại thông qua một mạng kết nối riêng.\cite{MicroservicesPatterns}
 
 Kiến trúc Microservices có hai mục tiêu chính là tính độc lập triển khai và mô hình hoá dựa trên nghiệp vụ. Cụ thể, tính độc lập triển khai được thể hiện ở điểm:
 mỗi dịch vụ khi cần thay thế, nâng cấp hay sửa lỗi thì nhà phát triển có thể thực thi điều đó mà không ảnh hưởng đến các dịch vụ khác. Đối với các dịch vụ,
-phạm vi của chúng được giới hạn bởi một nghiệp vụ cụ thể, chúng quản lý dữ liệu của riêng mình, điều này rất tương đồng với mô hình Domain Driven Design (DDD).
+phạm vi của chúng được giới hạn bởi một nghiệp vụ cụ thể, chúng quản lý dữ liệu của riêng mình, điều này rất tương đồng với mô hình Domain Driven Design (DDD).\cite{BuildingMicroservices}
 
 Về ưu điểm, kiến trúc Microservices giúp cho việc phát triển ứng dụng trở nên đơn giản hơn, mỗi dịch vụ có thể được phát triển độc lập bởi một đội ngũ phát triển riêng,
-với ngôn ngữ lập trình riêng. Họ có thể lựa chọn chọn công nghệ phù hợp với từng loại nghiệp vụ mà không bị ràng buộc bới các dịch vụ khác.
+với ngôn ngữ lập trình riêng. Họ có thể lựa chọn chọn công nghệ phù hợp với từng loại nghiệp vụ mà không bị ràng buộc bởi các dịch vụ khác.\cite{BuildingMicroservices}
 
 Do các dịch vụ là độc lập với nhau, việc triển khai mã nguồn, mở rộng theo chiều ngang có thể được thực hiện riêng rẽ, hoàn toàn dựa trên yêu cầu của từng dịch vụ.
 Ví dụ, một dịch vụ có lượng truy cập cao đột ngột có thể được mở rộng bằng cách nhân thêm các bản sao của chính nó, có thể phát sinh lỗi và dừng hoạt động mà không ảnh hưởng
-tới tất cả các thành phần khác trong hệ thống.
+tới tất cả các thành phần khác trong hệ thống.\cite{BuildingMicroservices}
 
 Trong phạm vi dự án, em lựa chọn kiến trúc Microservices để xây dựng hệ thống quản lý dự án. Các dịch vụ được chia nhỏ như sau:
 \begin{itemize}
@@ -90,7 +90,7 @@ tới các lớp xử lý tương ứng (Handler Class). Các lớp này có nhi
 
 Mediator là một mẫu thiết kế hành vi (Behavioral Pattern), nó cho phép giảm sự phụ thuộc giữa các đối tượng trong một hệ thống phần mềm bằng cách
 giúp chúng giao tiếp với nhau thông qua một đối tượng trung gian duy nhất. Mẫu thiết kế này giúp giảm sự phụ thuộc giữa các lớp, đồng thời giúp cho việc
-mở rộng hệ thống trở nên dễ dàng hơn. Hơn nữa, một luồng yêu cầu khi được triển khai sẽ tường minh hơn, tập các đối tượng sử dụng cũng dễ dàng để liệt kê.
+mở rộng hệ thống trở nên dễ dàng hơn. Hơn nữa, một luồng yêu cầu khi được triển khai sẽ tường minh hơn, tập các đối tượng sử dụng cũng dễ dàng để liệt kê.\cite{DesignPatterns}
 
 Cụ thể, mẫu thiết kế này có hai thành phần chính là Mediator và Request, chúng là các giao diện (interface) được định nghĩa trước nhằm chỉ ra cách
 giao tiếp giữa các request với nhau và với đối tượng trung gian Mediator. Concrete Mediator là lớp triển khai giao diện Mediator, nó chứa thông tin về tất cả
@@ -198,7 +198,7 @@ có mối quan hệ tương tự như các bảng trong cơ sở dữ liệu.
 \subsection{Thiết kế lớp}
 \label{subsection:4.2.2}
 
-Đầu tiền, em xin đưa ra thiết kế chi tiết cho 2 lớp chính liên quan đến người dùng là User và Person.
+Đầu tiên, em xin đưa ra thiết kế chi tiết cho 2 lớp chính liên quan đến người dùng là User và Person.
 Lớp User là lớp đại diện cho người dùng trong hệ thống, chứa các thông tin về tài khoản. Lớp Person là lớp đại diện cho thông tin
 cá nhân của người dùng, chứa các thông tin như họ tên, địa chỉ, số điện thoại. Chúng có quan hệ 1-1 với nhau.
 
@@ -211,7 +211,7 @@ cá nhân của người dùng, chứa các thông tin như họ tên, địa ch
         \textbf{Thuộc tính}                                                                                            \\ \hline
         Id                               & Unique Identifier     & Định danh duy nhất của mỗi bản ghi                  \\ \hline
         Username                         & String                & Tên đăng nhập của User                              \\ \hline
-        Email                            & String                & Địa chị email duy nhất của User                     \\ \hline
+        Email                            & String                & Địa chỉ email duy nhất của User                     \\ \hline
         EmailConfirmed                   & Boolean               & Cờ xác định User đã xác thực địa chỉ email hay chưa \\ \hline
         PasswordHash                     & String                & Mật khẩu của User sau khi đi qua hàm băm            \\ \hline
         LockoutEnabled                   & Boolean               & Cờ xác định User có đang bị khoá tạm thời không     \\ \hline
@@ -345,7 +345,7 @@ bao gồm các cột (Section) tương ứng với các trạng thái công vi�
 \newpage
 
 Dưới đây là biểu đồ tuần tự cho luồng Cập nhật thay đổi trong dự án, trong đó có sử dụng các lớp Project, Section và Task đã thiết kế ở trên.
-Có rất nhiều loại thay đổi có thể xảy ra mà người dụng thao tác trên giao diện, nhưng cơ bản thì chúng đều tương tự nhau, đó là cập nhật lại thông tin
+Có rất nhiều loại thay đổi có thể xảy ra mà người dùng thao tác trên giao diện, nhưng cơ bản thì chúng đều tương tự nhau, đó là cập nhật lại thông tin
 của các thực thể kể trên.
 
 
@@ -415,7 +415,7 @@ trong tầng ứng dụng của dịch vụ Personal. Các bảng còn lại là
 \label{subsection:4.3.2}
 
 Sau quá trình thực hiện đồ án, em đã xây dựng thành công một hệ thống quản lý dự án dựa trên kiến trúc Microservices theo yêu cầu đồ án
-đã trình bày ở Chương 2. Sản phầm đầu ra bao gồm một hệ thống back-end và một ứng dụng front-end, được triển khai trên môi trường đám mây.
+đã trình bày ở Chương 2. Sản phẩm đầu ra bao gồm một hệ thống back-end và một ứng dụng front-end, được triển khai trên môi trường đám mây.
 Trong đó, hệ thống back-end bao gồm các dịch vụ khác nhau được triển khai trên một cụm Kubernetes được quản lý bởi Google Kubernetes Engine.
 Chúng cung cấp các API để giao tiếp với ứng dụng front-end, cũng như với các dịch vụ khác trong hệ thống. Ngoài ra, hệ thống này còn triển khai một
 máy chủ xác thực riêng và độc lập với các dịch vụ khác.

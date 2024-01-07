@@ -19,21 +19,21 @@ Nhờ đó, việc thực thi, kiểm thử mã nguồn không có sự khác bi
 Đồng thời, hệ thống được đưa lên các máy chủ một cách đơn giản, tiết kiệm hơn, và không gặp phải những lỗi liên quan tới môi trường máy chủ, như hệ điều hành, xung đột giữa các gói và thư viện.
 Ngoài ra, Docker cung cấp khả năng quản lý phiên bản tương tự như mã nguồn, chúng được sử dụng để theo dõi các thay đổi, đánh dấu phiên bản ổn định, và quay lại phiên bản cũ hơn
 trong trường hợp có sự cố với phiên bản mới. Các "container" có thể được sử dụng như một bản thiết kế, giúp tiết kiệm thời gian và công sức trong việc
-xây dựng các "container" mới dựa trên những gì đã có.\cite{DockerIBM}
+xây dựng các "container" mới dựa trên những gì đã có.
 
 Hơn hết, việc xây dựng một quy trình kiểm thử, triển khai tự động cho hệ thống được đơn giản hoá, nhờ vào sự ổn định của các "container" và các công cụ hỗ trợ của Docker.
 Điều này không chỉ có lợi cho việc phát triển hệ thống, mà còn giúp cho việc bảo trì, nâng cấp, và mở rộng hệ thống trở nên dễ dàng hơn, hệ thống được kiểm thử tự động cho mọi thay đổi
-trước khi được đưa lên môi trường thực tế.\cite{DockerIBM}
+trước khi được đưa lên môi trường thực tế.
 
 \section{Kubernetes}
 \label{section:3.2}
 Kubernetes (viết tắt là K8s) là một nền tảng quản lý "container" mã nguồn mở, lập lịch trình và tự động hoá việc triển khai, vận hành và mở rộng các ứng dụng được đóng gói
 trong "container", cụ thể là kiến trúc Microservices. Nền tảng này được phát triển bởi Google với mục đích tối ưu hoá - tự động hoá nhiều quy trình phát triển và vận hành ứng dụng
-(Development and Operations - DevOps) trước đây được thực hiện thủ công và đơn giản hóa công việc của các nhà phát triển phần mềm.
+(Development and Operations - DevOps) trước đây được thực hiện thủ công và đơn giản hóa công việc của các nhà phát triển phần mềm.\cite{KubernetesIBM}
 
 Thực tế, Kubernetes là dự án phát triển nhanh nhất trong lịch sử phần mềm mã nguồn mở, sau Linux. Theo một nghiên cứu năm 2021 của Tổ chức điện toán hoạt động trên đám mây
 (Cloud Native Computing Foundation - CNCF), số lượng kỹ sư sử dụng Kubernetes tăng 67\% lên 3,9 triệu người. Đó là 31\% tổng số nhà phát triển back-end,
-tăng 4\% trong vòng một năm. Một số lượng lớn các công ty, tổ chức trong lĩnh vực công nghệ thông tin đã đưa Kubernetes vào để phát triển và vận hành các ứng dụng của mình.
+tăng 4\% trong vòng một năm. Một số lượng lớn các công ty, tổ chức trong lĩnh vực công nghệ thông tin đã đưa Kubernetes vào để phát triển và vận hành các ứng dụng của mình.\cite{KubernetesIBM}
 
 Trong phạm vi dự án, Kubernetes được sử dụng để quản lý toàn bộ các "container" trong hệ thống, đảm bảo các "container" luôn hoạt động ổn định và có thể mở rộng khi cần thiết.
 Cụ thể hơn, các "container" luôn được Kubernetes kiểm tra trạng thái, nếu có lỗi xảy ra, Kubernetes sẽ tự động khởi động lại "container" đó,
@@ -51,16 +51,16 @@ giảm tối đa sự thời gian gián đoạn của hệ thống đang chạy 
 \section{.NET 8 và ASP .NET Core}
 \label{section:3.3}
 
-.NET là một nền tảng phát triển phần mềm mã nguồn mở, miễn phí và đa nền tảng được phát triển bởi Microsoft. Nền tảng này cũng cấp cho nhà phát triển
+.NET là một nền tảng phát triển phần mềm mã nguồn mở, miễn phí và đa nền tảng được phát triển bởi Microsoft. Nền tảng này cung cấp cho nhà phát triển
 rất nhiều công cụ và thư viện để xây dựng ứng dụng trên đa dạng hệ điều hành, kiểu thiết bị, bao gồm phần mềm Desktop, ứng dụng di động, trò chơi điện tử,
 ứng dụng IoT (Internet vạn vật - Internet Of Things), ứng dụng Web. Ngôn ngữ lập trình chủ yếu của .NET là C\#, được thiết kế bởi Microsoft hoàn toàn dựa trên
 cơ sở lý thuyết và bám sát vào các khái niệm của lập trình hướng đối tượng hiện đại, giúp cho nhà phát triển dễ dàng làm quen và sử dụng thành thạo
 ngôn ngữ này. Ngoài ra, .NET còn hỗ trợ các ngôn ngữ lập trình khác như F\#, Visual Basic, C++,... Phiên bản mới nhất của .NET là .NET 8, kèm theo
-C\# 12.0 được ra mắt vào ngày 14 tháng 11 năm 2023 với nhiều cải tiến về hiệu suất thực thi và khả năng tương thích.
+C\# 12.0 được ra mắt vào ngày 14 tháng 11 năm 2023 với nhiều cải tiến về hiệu suất thực thi và khả năng tương thích.\cite{DotNetMS}
 
 Trong đó, ASP .NET Core là một framework được xây dựng  trên .NET với mục đích phát triển các ứng dụng Web hiệu suất cao, đa nền tảng,
 và dễ dàng bảo trì, mở rộng. Đặc biệt, framework này được tối ưu hoá tốt để xây dựng các ứng dụng sử dụng "container" và triển khai chúng với
-kiến trúc Microservices, cụ thể là các công cụ như Docker và Kubernetes.
+kiến trúc Microservices, cụ thể là các công cụ như Docker và Kubernetes.\cite{DotNetMS}
 
 So sánh với các framework khác như Spring Boot của sử dụng ngôn ngữ Java, hay Django của sử dụng ngôn ngữ Python, ASP .NET Core có hiệu năng cao hơn,
 và được hỗ trợ tốt hơn bởi cộng đồng nhà phát triển và Microsoft. Ngoài ra, mã nguồn của ASP .NET Core được áp dụng rất nhiều mẫu thiết kế phần mềm
@@ -73,8 +73,8 @@ Hot Chocolate, MediatR, gRPC, RabbitMQ,... được sử dụng để giảm thi
 Cụ thể, Entity Framework Core là một thư viện hỗ trợ truy cập cơ sở dữ liệu, giúp cho việc tương tác với cơ sở dữ liệu trở nên đơn giản hơn,
 các bản thiết kế của thực thể được định nghĩa dưới dạng các lớp, và các truy vấn được thực hiện bằng các phương thức của các lớp đó. Các thay đổi
 tới thiết kế cơ sở dữ liệu cũng được quản lý bằng mã nguồn ở tầng ứng dụng, bao gồm quản lý phiên bản, tự động áp dụng các thay đổi khi triển
-khai hệ thống trên môi tường mới. Các truy vấn phức tạp cũng có thể được dịch ra và thực thi trên cơ sở dữ liệu một cách tối ưu thông qua các phương
-thức được cũng cấp sẵn bởi framework và .NET.
+khai hệ thống trên môi trường mới. Các truy vấn phức tạp cũng có thể được dịch ra và thực thi trên cơ sở dữ liệu một cách tối ưu thông qua các phương
+thức được cung cấp sẵn bởi framework và .NET.
 
 Ngoài kết nối tới cơ sở dữ liệu, các kết nối khác trong hệ thống cũng rất quan trọng và hoàn toàn có thể dễ dàng được thực hiện trong chính mã nguồn
 ở tầng ứng dụng. Cụ thể hơn, kết nối giữa các dịch vụ trong kiến trúc Microservice thông qua giao thức gọi hàm từ xa (Remote Procedure Call - RPC) hay hàng đợi tin nhắn (Message queue),
@@ -88,12 +88,12 @@ PostgreSQL là một cơ sở dữ liệu mã nguồn mở có mức độ uy t�
 Khác với các hệ quản trị cơ sở dữ liệu quan hệ khác (Relational Database Management Systems), PostgreSQL hỗ trợ cả các loại dữ liệu không quan hệ
 và quan hệ. Ban đầu được phát triển vào năm 1986 như một phiên bản tiếp theo của INGRES (dự án cơ sở dữ liệu quan hệ SQL mã nguồn mở bắt đầu từ những năm 1970),
 POSTGRES, hiện được biết đến với tên PostgreSQL, là ý tưởng của Michael Stonebraker, một giáo sư khoa học máy tính tại Berkeley. Năm 1994, PostgreSQL chính thức
-được ra đời, và vẫn liên túc được phát triển và cập nhật phiên bản mới.
+được ra đời, và vẫn liên tục được phát triển và cập nhật phiên bản mới.\cite{PostgresIBM}
 
-Về điểm mạnh, PostgreSQL có một kiến trúc mở, được kiểm chứng về tính bảo mật, tính toàn vẹn dự liệu nhưng vẫn rất linh hoạt và dễ tiếp cận. Với tập
+Về điểm mạnh, PostgreSQL có một kiến trúc mở, được kiểm chứng về tính bảo mật, tính toàn vẹn dữ liệu nhưng vẫn rất linh hoạt và dễ tiếp cận. Với tập
 dữ liệu lớn, so với các đối thủ khác, hiệu suất đọc và ghi dữ liệu của PostgreSQL được ghi nhận là tốt hơn, các kỹ thuật tối ưu hoá truy vấn
-cũng được hỗ trợ tốt hơn. Bên cạnh đó, PostgreSQL cũng hộ trợ xử lý các truy vân đồng thời (Concurrency) một cách an toàn mà không cần chặn
-truy cập tới bản ghi (Record Locking), giúp tăng hiệu suất và giảm thiểu thời gian chờ đợi của các truy vấn thực thi song song.
+cũng được hỗ trợ tốt hơn. Bên cạnh đó, PostgreSQL cũng hỗ trợ xử lý các truy vấn đồng thời (Concurrency) một cách an toàn mà không cần chặn
+truy cập tới bản ghi (Record Locking), giúp tăng hiệu suất và giảm thiểu thời gian chờ đợi của các truy vấn thực thi song song.\cite{PostgresIBM}
 
 Trong phạm vi dự án, PostgreSQL được sử dụng làm cơ sở dữ liệu chính cho hệ thống, lưu trữ các dữ liệu dài hạn bởi khả năng cung cấp hiệu suất cao
 nhưng vẫn gọn nhẹ, tiết kiệm về bộ nhớ, khả năng tính toán của hệ thống. So sánh với các nền tảng khác, như Microsoft SQL Server, hay MySQL của Oracle,
