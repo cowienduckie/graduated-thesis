@@ -304,3 +304,6 @@ TSWLatexianTemp*
 *.pdf
 *.ist
 *.ntn
+
+# VSCode files
+.vscode/
