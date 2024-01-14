@@ -4,14 +4,14 @@
 % 2.1 Khảo sát hiện trạng
 \section{Khảo sát hiện trạng}
 \label{section:2.1}
-Để hoàn thành mục tiêu đề tài đã nêu ra ở chương \ref{chapter:Introduction}, đó là xây dựng một hệ thống quản lý dự án, trước hết, việc khảo sát các phần mềm tương tự và
-phổ biến hiện nay là một điều cần thiết, nhằm tìm ra những tính năng cốt lõi và thiết yếu của hệ thống. Trong phần này, em sẽ tìm hiểu về hai phần mềm là Asana và Azure Devops.
+Trước khi bước vào thiết kế và xây dựng, việc khảo sát các phần mềm tương tự và phổ biến hiện nay là một điều cần thiết để tìm ra những tính năng cốt lõi
+và thiết yếu của hệ thống quản lý dự án cần có. Trong phần này, em sẽ trình bày về hai ứng dụng quản lý dự án được nhiều tổ chức quan tâm và sử dụng là Asana và Azure Devops.
 
 %% 2.1.1 Asana
 \label{subsection:2.1.1}
 \subsection{Asana}
 Asana là một trong những phần mềm quản lý dự án phổ biến nhất trên thị trường hiện nay, với nhiều tính năng nổi bật, tập trung vào việc tuỳ chỉnh linh hoạt các dự án, và tương tác giữa các thành viên trong cùng một đội. Về các tính năng cơ bản, công cụ này cho phép các đội nhóm tạo ra các dự án,
-quản lý công việc chung, theo dõi tiến độ của dự án, và giao tiếp với nhau thông qua các bình luận, thảo luận. Ngoài ra, người dùng có thể đăng ký một tổ chức bao gồm nhiều
+quản lý công việc chung, theo dõi tiến độ của dự án và giao tiếp với nhau thông qua các bình luận, thảo luận. Ngoài ra, người dùng có thể đăng ký một tổ chức bao gồm nhiều
 đội nhóm, dự án khác nhau, chúng có thể tương tác qua lại lẫn nhau, giúp chia nhỏ công việc cho các đội nhóm từ 4-8 thành viên, dễ dàng hơn trong việc quản lý.
 
 Về điểm mạnh, Asana được thiết kế dựa trên Agile, một phương pháp luận phổ biến trong ngành phát triển phần mềm hiện nay. Chính vì vậy, công cụ này cung cấp cho người dùng
@@ -24,10 +24,8 @@ làm việc trên đa nền tảng.
 
 Về điểm yếu, Asana không có một hệ sinh thái các phần mềm doanh nghiệp so với các đối thủ, như Azure Devops của Microsoft hay Jira của Atlassian.
 Điều này khiến cho nhân viên của các công ty lớn phải quản lý nhiều hơn một tài khoản doanh nghiệp, một số thông tin nội bộ không thể chia sẻ với một nền tảng đám mây khác
-do chính sách bảo mật. Ngoài ra, mức giá giá của Asana cũng là một rào cản lớn đối với các công ty nhỏ, đội nhóm làm việc tự do trong khi phiên bản miễn phí của Asana rất
+do chính sách bảo mật. Ngoài ra, mức giá của Asana cũng là một rào cản lớn đối với các công ty nhỏ, đội nhóm làm việc tự do trong khi phiên bản miễn phí của Asana rất
 hạn chế về tính năng.
-
-
 
 %% 2.1.2 Azure Devops
 \label{subsection:2.1.2}
@@ -58,8 +56,8 @@ sự đủ tốt so với các đối thủ khác. Ví dụ, với công việc 
 % 2.2 Tổng quan chức năng
 \section{Tổng quan chức năng}
 \label{section:2.2}
-Hệ thống được xây dựng phù hợp với các mô hình phát triển phần mềm hiện nay đặc biệt là mô hình Scrum.
-Hệ thống phục vụ cho hai tác nhân chính là Người dùng (User) và Quản trị viên (Admin).
+Hệ thống được xây dựng dựa trên các nguyên tắc cơ bản của các mô hình phát triển phần mềm hiện đại đặc biệt là Agile, Kanban và Scrum.
+Các ca sử dụng được xây dựng cho hai tác nhân chính là Quản trị viên (Admin) và Người dùng (User), ngoài ra có tác nhân Khách (Guest).
 
 %% 2.2.1 Biểu đồ use case tổng quát
 \subsection{Biểu đồ use case tổng quát}
@@ -104,7 +102,7 @@ Use case Quản lý lý tổ chức với tác nhân chính là Người dùng b
 \subsection{Biểu đồ use case phân rã Quản lý dự án}
 \label{subsection:2.2.4}
 Use case Quản lý dự án bao gồm các chức năng chính là thêm dự án, chỉnh sửa thông tin dự án, quản lý các thành viên trong dự án,
-các milestones của dự án và các category của dự án.
+các cột mốc của dự án.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{Hinhve/ProjectUseCases.png}
@@ -117,9 +115,8 @@ các milestones của dự án và các category của dự án.
 \subsection{Biểu đồ use case phân rã Quản lý công việc}
 \label{subsection:2.2.5}
 Use case Quản lý công việc bao gồm các chức năng chính là thêm công việc, sửa thông tin công việc và xem danh sách công việc.
-Trong sửa thông tin công việc chúng ta có thể thay đổi trạng thái của nó, giao công việc đó cho người khác.
-Trong xem danh sách công việc có thể sử dụng chức năng lọc để xem danh sách công việc theo các thuộc tính như người được giao, milestone,
-category và một vài thuộc tính khác.
+Trong sửa thông tin công việc chúng ta có thể thay đổi trạng thái, ngày tới hạn, mô tả, giao công việc đó cho người khác.
+Trong xem danh sách công việc có thể sử dụng chức năng lọc để xem danh sách công việc theo các thuộc tính như người được giao, cột mốc.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{Hinhve/TaskUseCases.png}
@@ -272,6 +269,82 @@ category và một vài thuộc tính khác.
     \renewcommand{\arraystretch}{1}
     \caption{Đặc tả use case Giao công việc}
     \label{tab:UC04}
+\end{table}
+
+\newpage
+
+\subsection{Đặc tả use case Thêm thành viên tổ chức}
+\label{subsection:2.3.5}
+
+\begin{table}[ht]
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{| p{0.2\linewidth} | p{0.1\linewidth} | p{0.2\linewidth} | p{0.5\linewidth} |}
+        \hline
+        \textbf{Mã usecase}                                          & UC05                                                                                         & \textbf{Tên usecase}                                       & Giao công việc                                                                                                                        \\ \hline
+        \multicolumn{1}{|p{0.2\linewidth}|}{\textbf{Tác nhân}}       & \multicolumn{3}{p{0.8\linewidth}|}{Người dùng}                                                                                                                                                                                                                                                    \\ \hline
+        \multicolumn{1}{|p{0.2\linewidth}|}{\textbf{Mô tả}}          & \multicolumn{3}{p{0.8\linewidth}|}{Ca sử dụng cho phép tác nhân thêm thành viên cho tổ chức}                                                                                                                                                                                                      \\ \hline
+        \multicolumn{1}{|p{0.2\linewidth}|}{\textbf{Tiền điều kiện}} & \multicolumn{3}{p{0.8\linewidth}|}{Tác nhân đã đăng nhập vào hệ thống}                                                                                                                                                                                                                            \\ \hline
+
+        \multirow{12}{\linewidth}{\textbf{Luồng sự kiện chính}}      & \multicolumn{1}{p{0.1\linewidth}|}{\textbf{STT}}                                             & \multicolumn{1}{p{0.2\linewidth}|}{\textbf{Thực hiện bởi}} & \multicolumn{1}{p{0.5\linewidth}|}{\textbf{Hành động}}                                                                                \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{1}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn vào nút "Danh sách tổ chức"}                                                                  \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{2}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Điều hướng tới trang "Danh sách tổ chức" và hiển thị các tổ chức có thể truy cập}                  \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{3}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn vào một tổ chức trong mục "Tổ chức của bạn"}                                                  \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{4}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Hệ Thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Điều hướng tới trang "Chi tiết tổ chức" và hiển thị các thành viên trong tổ chức}                  \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{5}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn vào một mục "Lời mời thành viên"}                                                             \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{6}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn vào nút "Thêm thành viên"}                                                                    \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{7}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Hiển thị hộp thoại "Thêm thành viên"}                                                              \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{8}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhập vào địa chỉ thư điện tử của người dùng khác}                                                  \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{9}                                                        & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn nút "Xác nhận"}                                                                               \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{10}                                                       & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Thực hiện xử lý tạo lời mời thành viên ở cơ sở dữ liệu}                                            \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{11}                                                       & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Gửi thư điện tử tới thành viên nhận được lời mời}                                                  \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{12}                                                       & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Thông báo: "Cập nhật thay đổi thành công!"}                                                        \\ \hline
+
+        \multirow{4}{\linewidth}{\textbf{Luồng sự kiện thay thế}}    & \multicolumn{1}{p{0.1\linewidth}|}{10a}                                                      & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Địa chỉ thư điện tử của người nhận không hợp lệ hoặc không có trong hệ thống}                      \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{11a}                                                      & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Thông báo lỗi: "Lời mời tham gia đã xảy ra lỗi!" và hiển thị lại danh sách thành viên của tổ chức} \\ \hline
+
+        \textbf{Hậu điều kiện}                                       & \multicolumn{3}{p{0.1\linewidth}|}{Không}                                                                                                                                                                                                                                                         \\ \hline
+    \end{tabular}%
+    \renewcommand{\arraystretch}{1}
+    \caption{Đặc tả use case Thêm thành viên tổ chức}
+    \label{tab:UC05}
+\end{table}
+
+\newpage
+
+\subsection{Đặc tả use case Thêm bình luận}
+\label{subsection:2.3.6}
+
+\begin{table}[ht]
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{| p{0.2\linewidth} | p{0.1\linewidth} | p{0.2\linewidth} | p{0.5\linewidth} |}
+        \hline
+        \textbf{Mã usecase}                                          & UC06                                                                                              & \textbf{Tên usecase}                                       & Giao công việc                                                                                                                 \\ \hline
+        \multicolumn{1}{|p{0.2\linewidth}|}{\textbf{Tác nhân}}       & \multicolumn{3}{p{0.8\linewidth}|}{Người dùng}                                                                                                                                                                                                                                                  \\ \hline
+        \multicolumn{1}{|p{0.2\linewidth}|}{\textbf{Mô tả}}          & \multicolumn{3}{p{0.8\linewidth}|}{Ca sử dụng cho phép tác nhân thêm bình luận vào một công việc}                                                                                                                                                                                               \\ \hline
+        \multicolumn{1}{|p{0.2\linewidth}|}{\textbf{Tiền điều kiện}} & \multicolumn{3}{p{0.8\linewidth}|}{Tác nhân đã đăng nhập vào hệ thống}                                                                                                                                                                                                                          \\ \hline
+
+        \multirow{12}{\linewidth}{\textbf{Luồng sự kiện chính}}      & \multicolumn{1}{p{0.1\linewidth}|}{\textbf{STT}}                                                  & \multicolumn{1}{p{0.2\linewidth}|}{\textbf{Thực hiện bởi}} & \multicolumn{1}{p{0.5\linewidth}|}{\textbf{Hành động}}                                                                         \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{1}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn vào nút "Danh sách dự án"}                                                             \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{2}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Điều hướng tới trang "Danh sách dự án" và hiển thị các dự án có thể truy cập}               \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{3}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn vào một thẻ dự án}                                                                     \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{4}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Hệ Thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Điều hướng tới trang "Chi tiết dự án" và hiển thị các công việc của dự án}                  \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{5}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn vào một thẻ công việc}                                                                 \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{6}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhập nội dung bình luận vào hộp thoại "Bình luận"}                                          \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{7}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Người dùng}             & \multicolumn{1}{p{0.5\linewidth}|}{Nhấn nút "Đăng"}                                                                            \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{8}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Thực hiện xử lý thêm bản ghi bình luận ở cơ sở dữ liệu}                                     \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{9}                                                             & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Thông báo: "Đăng bình luận thành công!"}                                                    \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{10}                                                            & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Gửi thông thư điện tử thông báo cho người đang được giao công việc}                         \\ \hline
+
+        \multirow{4}{\linewidth}{\textbf{Luồng sự kiện thay thế}}    & \multicolumn{1}{p{0.1\linewidth}|}{8a}                                                            & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Có lỗi xảy ra khi cập nhật cơ sở dữ liệu}                                                   \\ \cline{2-4}
+                                                                     & \multicolumn{1}{p{0.1\linewidth}|}{9a}                                                            & \multicolumn{1}{p{0.2\linewidth}|}{Hệ thống}               & \multicolumn{1}{p{0.5\linewidth}|}{Thông báo lỗi: "Cập nhật thay đổi xảy ra lỗi!" và hiển thị lại trạng thái cũ của công việc} \\ \hline
+
+        \textbf{Hậu điều kiện}                                       & \multicolumn{3}{p{0.1\linewidth}|}{Không}                                                                                                                                                                                                                                                       \\ \hline
+    \end{tabular}%
+    \renewcommand{\arraystretch}{1}
+    \caption{Đặc tả use case Thêm bình luận}
+    \label{tab:UC06}
 \end{table}
 
 \newpage

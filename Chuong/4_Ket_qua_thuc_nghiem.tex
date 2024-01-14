@@ -20,7 +20,7 @@ Do các dịch vụ là độc lập với nhau, việc triển khai mã nguồn
 Ví dụ, một dịch vụ có lượng truy cập cao đột ngột có thể được mở rộng bằng cách nhân thêm các bản sao của chính nó, có thể phát sinh lỗi và dừng hoạt động mà không ảnh hưởng
 tới tất cả các thành phần khác trong hệ thống.\cite{BuildingMicroservices}
 
-Trong phạm vi dự án, em lựa chọn kiến trúc Microservices để xây dựng hệ thống quản lý dự án. Các dịch vụ được chia nhỏ như sau:
+Cụ thể về kiến trúc Microservices, em sẽ trình bày ở Chương \ref{chapter:SolutionAndContribution}. Trong phạm vi dự án, em lựa chọn kiến trúc Microservices để xây dựng hệ thống quản lý dự án. Các dịch vụ được chia nhỏ như sau:
 \begin{itemize}
     \item Dịch vụ xác thực và quản lý tài khoản (Identity Server): xác thực người dùng, phân quyền người dùng.
     \item Dịch vụ quản lý người dùng (Personal Data Service): quản lý thông tin cá nhân của người dùng, thông tin về tổ chức, đội nhóm.
@@ -374,7 +374,7 @@ trong tầng ứng dụng của dịch vụ Portal. Các bảng còn lại là c
     \label{fig:PortalDbDiagram}
 \end{figure}
 
-Cơ sở dữ liệu của dịch vụ Personal được thiết kế gồm các bảng chính là People, Teams, Workspaces, và Organizationss. Các bảng này tương ứng với các thực thể
+Cơ sở dữ liệu của dịch vụ Personal được thiết kế gồm các bảng chính là People, Teams, Workspaces, và Organizations. Các bảng này tương ứng với các thực thể
 trong tầng ứng dụng của dịch vụ Personal. Các bảng còn lại là các bảng phụ, có tác dụng liên kết, bổ sung thông tin cho các bảng chính.
 
 \begin{figure}[H]
@@ -421,29 +421,9 @@ Chúng cung cấp các API để giao tiếp với ứng dụng front-end, cũng
 máy chủ xác thực riêng và độc lập với các dịch vụ khác.
 Về ứng dụng front-end, no được triển khai trên trên một máy chủ riêng nhằm đảm bảo tốc độ phản hồi tốt nhất cho người dùng.
 
-Về mã nguồn, em cũng chia chúng làm hai phần tương ứng với hệ thống back-end và ứng dụng front-end.
-Mã nguồn của cả được lưu trữ trên GitHub, trong đó có bao gồm các tệp tin cấu hình để triển khai trên môi trường đám mây, cấu hình
+Về mã nguồn, em chia làm hai phần tương ứng với hệ thống back-end và ứng dụng front-end.
+Mã nguồn của toàn bộ dự án được lưu trữ trên GitHub, trong đó có bao gồm các tệp tin cấu hình để triển khai trên môi trường đám mây, cấu hình
 tài nguyên cho các dịch vụ, hướng dẫn triển khai và vận hành hệ thống.
-
-Dưới đây, em xin thống kê lại các thông số khác về đồ án mà em đã thực hiện.
-
-\begin{table}[H]
-    \renewcommand{\arraystretch}{1.2}
-    \centering{}
-    \begin{tabular}{p{0.7\linewidth}p{0.3\linewidth}}
-        \hline
-        Số lượng dòng code trong mã nguồn & TBC \\ \hline
-        Số lượng lớp trong mã nguồn       & TBC \\ \hline
-        Số lượng gói trong mã nguồn       & TBC \\ \hline
-        Dung lượng mã nguồn               & TBC \\ \hline
-        Số lượng bảng trong cơ sở dữ liệu & TBC \\ \hline
-        Dung lượng cơ sở dữ liệu          & TBC \\ \hline
-        Tổng thời gian thực hiện mã nguồn & TBC \\ \hline
-    \end{tabular}
-    \renewcommand{\arraystretch}{1}
-    \caption{Thống kê các thông số về đồ án}
-    \label{fig:project_statistics}
-\end{table}
 
 \newpage
 
@@ -595,9 +575,73 @@ Dưới đây, em xin thống kê lại các thông số khác về đồ án m�
 
 \begin{figure}[H]
     \centering
+    \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_ListView.png}
+    \caption{Minh hoạ giao diện Chi tiết dự án dạng bảng danh sách}
+    \label{fig:Screenshot_ListView}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_CalendarViewMonth.png}
+    \caption{Minh hoạ giao diện Chi tiết dự án dạng lịch tháng}
+    \label{fig:Screenshot_CalendarViewMonth}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_CalendarViewYear.png}
+    \caption{Minh hoạ giao diện Chi tiết dự án dạng lịch năm}
+    \label{fig:Screenshot_CalendarViewYear}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+    \centering
     \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_AddNewTask.png}
     \caption{Minh hoạ giao diện Tạo công việc}
     \label{fig:Screenshot_AddNewTask}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_UpdateTask.png}
+    \caption{Minh hoạ giao diện Cập nhật công việc}
+    \label{fig:Screenshot_UpdateTask}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_WorkspaceList.png}
+    \caption{Minh hoạ giao diện Danh sách không gian làm việc}
+    \label{fig:Screenshot_WorkspaceList}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_WorkspaceInvite.png}
+    \caption{Minh hoạ giao diện Danh sách mời tham gia không gian làm việc}
+    \label{fig:Screenshot_WorkspaceInvite}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_WorkspaceDetail_Members.png}
+    \caption{Minh hoạ giao diện Danh sách thành viên trong không gian làm việc}
+    \label{fig:Screenshot_WorkspaceDetail_Members}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Hinhve/Screenshot_WorkspaceDetail_Projects.png}
+    \caption{Minh hoạ giao diện Danh sách dự án trong không gian làm việc}
+    \label{fig:Screenshot_WorkspaceDetail_Projects}
 \end{figure}
 
 \newpage
@@ -667,7 +711,7 @@ kịch bản để kiểm thử các hàm, phương thức của các lớp th�
 \label{subsection:4.5.1}
 Đối với ứng dụng Front-end, mã nguồn được lưu trữ trên GitHub và triển khai trên môi trường của Vercel. Trong đó, GitHub là một dịch vụ lưu trữ mã nguồn phổ biến nhất
 hiện nay, cung cấp các tính năng cơ bản về quản lý mã nguồn và quản lý phiên bản, cũng như tích hợp tốt với các dịch vụ đám mây khác. Còn Vercel là một nền tảng đám mây
-cho phép triển khai các ứng dụng web một cách nhanh chóng, đơn giản và cung cấp sẵn tính năng tự động tích hợp và triển khai ứng dụng (Countinous Integration and Delivery - CI/CD) với GitHub.
+cho phép triển khai các ứng dụng web một cách nhanh chóng, đơn giản và cung cấp sẵn tính năng tự động tích hợp và triển khai ứng dụng (Countinuous Integration and Delivery - CI/CD) với GitHub.
 Mọi thay đổi tới mã nguồn trên GitHub đều được Vercel tự động nhận biết và triển khai lại ứng dụng một cách tự động.
 
 \subsection{Hệ thống Back-end}
