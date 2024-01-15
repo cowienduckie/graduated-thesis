@@ -62,9 +62,10 @@ Các ca sử dụng được xây dựng cho hai tác nhân chính là Quản tr
 %% 2.2.1 Biểu đồ use case tổng quát
 \subsection{Biểu đồ use case tổng quát}
 \label{subsection:2.2.1}
-Tác nhân người dùng có các chức năng như đăng nhập, đăng xuất, quản lý tổ chức, quản lý dự án, quản lý công việc. Tác nhân quản trị viên có các chức năng như đăng nhập,
-đăng xuất và quản lý tài khoản. Tác nhân khách (Guest), là những tác nhân chưa phải người dùng của hệ thống, có chức năng là đăng ký tài khoản.
-Các ca sử dụng sẽ được phân rã ở những mục tiếp theo.
+Các chức năng của tác nhân Người dùng bao gồm đăng nhập, đăng xuất, quản lý công việc, quản lý dự án, quản lý tổ chức.
+Các chức năng của tác nhân Quản trị viên bao gồm đăng nhập, đăng xuất và quản lý tài khoản.
+Tác nhân khách (Guest), là những tác nhân chưa phải người dùng của hệ thống, có chức năng là đăng ký tài khoản.
+Trong phần tiếp theo của đồ án, em sẽ trình bày chi tiết phân rã của các ca sử dụng này.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{Hinhve/GeneralUseCases.png}
@@ -76,8 +77,8 @@ Các ca sử dụng sẽ được phân rã ở những mục tiếp theo.
 %% 2.2.2 Biểu đồ use case phân rã Quản lý tài khoản
 \subsection{Biểu đồ use case phân rã Quản lý tài khoản}
 \label{subsection:2.2.2}
-Use case Quản lý tài khoản với tác nhân chính là Quản trị viên bao gồm các chức năng chính là xem toàn bộ tài khoản, chỉnh sửa tài khoản, vô hiệu hoá tài khoản,
-tái kích hoạt tài khoản và xem chi tiết tài khoản.
+Ca sử dụng Quản lý tài khoản với tác nhân chính là Quản trị viên được phân rã gồm các chức năng:
+Xem toàn bộ tài khoản, Chỉnh sửa thông tin tài khoản, Vô hiệu hoá tài khoản, Tái kích hoạt tài khoản và Xem chi tiết tài khoản.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{Hinhve/AccountUseCases.png}
@@ -89,7 +90,7 @@ tái kích hoạt tài khoản và xem chi tiết tài khoản.
 %% 2.2.3 Biểu đồ use case phân rã Quản lý tổ chức
 \subsection{Biểu đồ use case phân rã Quản lý tổ chức}
 \label{subsection:2.2.3}
-Use case Quản lý lý tổ chức với tác nhân chính là Người dùng bao gồm các chức năng chính là quản lý thành viên, thêm tổ chức, chỉnh sửa thông tin tổ chức, xoá tổ chức
+Ca sử dụng Quản lý tổ chức được phân rã gồm các chức năng: Quản lý thành viên, Thêm tổ chức, Chỉnh sửa thông tin tổ chức, Xoá tổ chức
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{Hinhve/WorkspaceUseCases.png}
@@ -101,8 +102,8 @@ Use case Quản lý lý tổ chức với tác nhân chính là Người dùng b
 %% 2.2.4 Biểu đồ use case phân rã Quản lý dự án
 \subsection{Biểu đồ use case phân rã Quản lý dự án}
 \label{subsection:2.2.4}
-Use case Quản lý dự án bao gồm các chức năng chính là thêm dự án, chỉnh sửa thông tin dự án, quản lý các thành viên trong dự án,
-các cột mốc của dự án.
+Ca sử dụng Quản lý dự án được phân rã gồm các chức năng: Thêm dự án, Sửa thông tin dự án, Quản lý các thành viên trong dự án,
+Quản lý các cột mốc của dự án.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{Hinhve/ProjectUseCases.png}
@@ -114,9 +115,9 @@ các cột mốc của dự án.
 %% 2.2.5 Biểu đồ use case phân rã Quản lý công việc
 \subsection{Biểu đồ use case phân rã Quản lý công việc}
 \label{subsection:2.2.5}
-Use case Quản lý công việc bao gồm các chức năng chính là thêm công việc, sửa thông tin công việc và xem danh sách công việc.
-Trong sửa thông tin công việc chúng ta có thể thay đổi trạng thái, ngày tới hạn, mô tả, giao công việc đó cho người khác.
-Trong xem danh sách công việc có thể sử dụng chức năng lọc để xem danh sách công việc theo các thuộc tính như người được giao, cột mốc.
+Ca sử dụng Quản lý công việc được phân rã gồm các chức năng: Thêm công việc, Sửa thông tin công việc và Xem danh sách công việc.
+Trong ca sử dụng Sửa thông tin công việc tác nhân Người dùng có thể thay đổi trạng thái, ngày tới hạn, mô tả, giao công việc đó cho Người dùng khác.
+Trong ca sử dụng Xem danh sách công việc có thể sử dụng chức năng lọc theo các trường như người thực hiện, cột mốc, ngày tới hạn.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{Hinhve/TaskUseCases.png}
